@@ -1,0 +1,258 @@
+.blog-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 315px;
+}
+
+/* 검색 및 필터 컨트롤 */
+.blog-controls {
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    margin-bottom: 1rem;
+}
+
+.search-bar input {
+    width: 95%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-label {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-right: 0.5rem;
+}
+
+.category-button {
+    background: none;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.category-button:hover {
+    background-color: #f8f9fa;
+}
+
+.category-button.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+/* 블로그 포스트 */
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.blog-post {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 2rem;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.post-date {
+    color: #7f8c8d;
+}
+
+.post-category {
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.post-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.post-summary {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #34495e;
+}
+
+.post-content {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #5d6d7e;
+}
+
+.read-more {
+    background: none;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #2980b9;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        padding: 1.5rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .post-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* 다크 모드 스타일 */
+.blog-container.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.blog-container.dark .blog-post,
+.blog-container.dark .blog-post-detail {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.blog-container.dark .post-title {
+    color: #ffffff;
+}
+
+.blog-container.dark .post-summary,
+.blog-container.dark .post-content,
+.blog-container.dark .post-content-full {
+    color: #b0b0b0;
+}
+
+.blog-container.dark .category-button {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.blog-container.dark .category-button.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.blog-container.dark .search-bar input {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.blog-container.dark .read-more,
+.blog-container.dark .back-button {
+    color: #61dafb;
+}
+
+.blog-container.dark .no-results {
+    background-color: #1e1e1e;
+}
+
+/* 테마 전환 버튼 */
+.theme-toggle {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.theme-toggle button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.blog-container.dark .theme-toggle button {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* 블로그 포스트 상세 보기 스타일 */
+.blog-post-detail {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.blog-post-detail .post-title {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.blog-post-detail .post-summary {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #34495e;
+}
+
+.post-content-full {
+    line-height: 1.8;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #3498db;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}

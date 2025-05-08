@@ -1,0 +1,309 @@
+.gallery-container {
+    max-width: 1200px;
+    min-height: 670px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 카테고리 필터 */
+.category-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-filter button {
+    background: none;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #2c3e50;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.category-filter button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #3498db;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.category-filter button:hover {
+    color: #3498db;
+}
+
+.category-filter button.active {
+    color: #3498db;
+}
+
+.category-filter button.active::after {
+    width: 50%;
+}
+
+/* 갤러리 그리드 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover .gallery-image img {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.overlay p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.view-details {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-details:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* 검색 및 다크 모드 스타일 */
+.gallery-controls {
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    margin-bottom: 1.5rem;
+}
+
+.search-box input {
+    width: 95%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.theme-toggle {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.theme-toggle button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-image {
+    margin-bottom: 1.5rem;
+}
+
+.modal-image img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.modal-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.technologies h3 {
+    margin-bottom: 0.8rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    background-color: #f0f0f0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover {
+    background-color: #2980b9;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* 다크 모드 스타일 */
+.gallery-container.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.gallery-container.dark .category-filter button {
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+.gallery-container.dark .category-filter button.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.gallery-container.dark .overlay {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.gallery-container.dark .theme-toggle button {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.gallery-container.dark .search-box input {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.gallery-container.dark .modal-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.gallery-container.dark .close-button {
+    color: #e0e0e0;
+}
+
+.gallery-container.dark .tech-tag {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.gallery-container.dark .no-results {
+    background-color: #1e1e1e;
+}
