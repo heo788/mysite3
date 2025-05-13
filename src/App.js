@@ -19,9 +19,6 @@ const App = () => {
               <Route path="/" element={<Navigate to="/home" />} />
               <Route path="/home" element={<HomePage />} />
               <Route path="/about-me" element={<AboutMePage />} />
-              {/* <Route path="/gallery" element={<GalleryPage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/my-story" element={<MyStoryPage />} /> */}
             </Routes>
             <footer className="app-footer">
               <Footer />
