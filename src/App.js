@@ -14,6 +14,7 @@ const App = () => {
           <header className="app-header">
             <Header />
           </header>
+          
           <main>
             <Routes>
               <Route path="/" element={<Navigate to="/home" />} />
